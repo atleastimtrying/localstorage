@@ -1,0 +1,161 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>localStorage lightning talk.</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src='javascripts/jquery.js'></script>
+    <script src="javascripts/app.js"></script>
+  </head>
+  <body>
+    <div id='timer'>0</div>
+    <section class='active'>
+      <h2>localStorage lightening talk!</h2>
+      <h1>b l</h1>
+    </section>
+
+    <section>
+      <h2>What is localStorage?</h2>
+      <ul>
+        <li>Available in most modern browsers</li>
+        <li>Stores and persists data in browser</li>
+        <li>Associated with your url</li>
+        <li>Accessed via Javascript</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contrived Example : app.js</h2>
+      <pre>
+<blockquote>$(function(){
+  var message = 'test' + Math.random();
+  localStorage.setItem('message', message);
+  var stored = localStorage.getItem('message');
+  console.log( === message);
+});
+</blockquote>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Putting things into storage</h2>
+      <ul>
+        <li>Stored as key value pairs</li>
+        <li>Anything can be overwritten</li>
+        <li>Store as String</li>
+        <li>JSON is handy</li>
+        <li>localStorage.setItem('key', 'value');</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Getting things from Storage</h2>
+      <ul>
+        <li>Expect a string or undefined</li>
+        <li>Test your keys</li>
+        <li>JSON is handy</li>
+        <li>localStorage.getItem('key');</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contrived JSON Example</h2>
+      <pre>
+<blockquote>$(function(){
+  var numbers = {one: 'one', two: 2};
+  localStorage.setItem('numbers', JSON.stringify(object));
+  var stored = JSON.parse(localStorage.getItem('numbers'));
+  console.log(stored === numbers);
+});
+</blockquote>
+      </pre>
+    </section>
+    
+    <section>
+      <h2>JSON methods</h2>
+      <ul>
+        <li>Stringify</li>
+        <li>Parse</li>
+        <li>Allows storage of complex objects</li>
+        <li>Native to JS ideal analog for mongodb or similar</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Use Cases</h2>
+      <ul>
+        <li>Phonegap</li>
+        <li>Mobile sites</li>
+        <li>User Settings</li>
+        <li>Disposable information</li>
+        <li>Fonts!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Thoughts on usage</h2>
+      <ul>
+        <li>Doesn't persist between devices</li>
+        <li>Might need syncing with remote storage</li>
+        <li>Expect data to be lost</li>
+        <li>Don't store passwords</li>
+        <li>Data limits, strings only people!</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Manifest files</h2>
+      <ul>
+        <li>Handle caching</li>
+        <li>Cache assets for offline usage</li>
+        <li>Gives you confidence for referring to files in localStorage</li>
+        <li>Think of it as a localCDN!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contrived Manifest example</h2>
+      <pre>
+<blockquote>
+</blockquote>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Controversy</h2>
+      <ul>
+        <li>Fill my site</li>
+        <li>5MB per domain</li>
+        <li>Infinite domains</li>
+        <li>Full hard drive!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Disadvantages</h2>
+      <ul>
+        <li>Searching isn't as neat as a DB</li>
+        <li>Handle IE exceptions</li>
+        <li>Syncing multiple devices</li>
+        <li>Could wipe all localstorage with a bookmarklet!</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Advantages</h2>
+      <ul>
+        <li>Lightning fast</li>
+        <li>No http requests for data</li>
+        <li>Reduces load on remote storage</li>
+        <li>Great for offline</li>
+        <li>Widely supported</li>
+        <li>Easy API, feels like a JS object!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Questions?</h2>
+      <h2>@atleastimtrying</h2>
+      <img src='images/gordon.jpg'>
+    </section>
+  </body>
+</html>
