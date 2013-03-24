@@ -30,7 +30,7 @@
   var message = 'test' + Math.random();
   localStorage.setItem('message', message);
   var stored = localStorage.getItem('message');
-  console.log( === message);
+  console.log( stored === message);
 });
 </blockquote>
       </pre>
@@ -98,7 +98,7 @@
         <li>Might need syncing with remote storage</li>
         <li>Expect data to be lost</li>
         <li>Don't store passwords</li>
-        <li>Data limits, strings only people!</li>
+        <li>5Mb limits, strings only people!</li>
       </ul>
     </section>
     
@@ -108,14 +108,18 @@
         <li>Handle caching</li>
         <li>Cache assets for offline usage</li>
         <li>Gives you confidence for referring to files in localStorage</li>
-        <li>Think of it as a localCDN!</li>
+        <li>Think of it as a local CDN!</li>
       </ul>
     </section>
 
     <section>
       <h2>Contrived Manifest example</h2>
       <pre>
-<blockquote>
+<blockquote>CACHE MANIFEST
+index.html
+stylesheet.css
+images/logo.png
+scripts/main.js
 </blockquote>
       </pre>
     </section>
