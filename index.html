@@ -30,7 +30,7 @@
   var message = 'test' + Math.random();
   localStorage.setItem('message', message);
   var stored = localStorage.getItem('message');
-  console.log( stored === message);
+  console.assert( stored === message);
 });
 </blockquote>
       </pre>
@@ -51,7 +51,7 @@
       <h2>Getting things from Storage</h2>
       <ul>
         <li>Expect a string or undefined</li>
-        <li>Test your keys</li>
+        <li>Test your results</li>
         <li>JSON is handy</li>
         <li>localStorage.getItem('key');</li>
       </ul>
@@ -62,9 +62,11 @@
       <pre>
 <blockquote>$(function(){
   var numbers = {one: 'one', two: 2};
-  localStorage.setItem('numbers', JSON.stringify(object));
-  var stored = JSON.parse(localStorage.getItem('numbers'));
-  console.log(stored === numbers);
+  var string = JSON.stringify(object);
+  localStorage.setItem('numbers', string);
+  string = localStorage.getItem('numbers');
+  stored = JSON.parse(string);
+  console.assert(stored === numbers);
 });
 </blockquote>
       </pre>
@@ -76,7 +78,8 @@
         <li>Stringify</li>
         <li>Parse</li>
         <li>Allows storage of complex objects</li>
-        <li>Native to JS ideal analog for mongodb or similar</li>
+        <li>Recognised standard</li>
+        <li>ideal analog for mongodb or similar</li>
       </ul>
     </section>
 
@@ -127,7 +130,7 @@ scripts/main.js
     <section>
       <h2>Controversy</h2>
       <ul>
-        <li>Fill my site</li>
+        <li>Hard Disk Filler<sup>tm</sup></li>
         <li>5MB per domain</li>
         <li>Infinite domains</li>
         <li>Full hard drive!</li>
@@ -138,9 +141,9 @@ scripts/main.js
       <h2>Disadvantages</h2>
       <ul>
         <li>Searching isn't as neat as a DB</li>
-        <li>Handle IE exceptions</li>
+        <li>Handle IE7 exceptions</li>
         <li>Syncing multiple devices</li>
-        <li>Could wipe all localstorage with a bookmarklet!</li>
+        <li>Could read/wipe all localstorage with a bookmarklet!</li>
       </ul>
     </section>
     
